@@ -3,12 +3,12 @@
     <h1 class="pt-5">Login Form</h1>
    
     <!-- Login Form -->
-    <form action="/login" method="POST" id="submit-form2" class="pt-5">
+    <form action="/login" method="POST" id="login" class="pt-5">
     {{#if loginErr}}
      <p style="color: red;">Invalid username or password</p>
     {{/if}}
-      <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email..." required pattern="\S(.*\S)?">
-      <input type="password" id="password" class="fadeIn third mt-2" name="password" placeholder="password" minlength="3" required pattern="\S(.*\S)?">
+      <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email..."  pattern="\S(.*\S)?">
+      <input type="password" id="password" class="fadeIn third mt-2" name="password" placeholder="password" minlength="3"pattern="\S(.*\S)?">
       <input type="submit" class="fadeIn fourth mt-5" value="Log In">
     </form>
 

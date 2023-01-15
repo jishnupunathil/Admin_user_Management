@@ -7,10 +7,10 @@ const user_helper = require('../helpers/user_helper');
 
 router.get('/', function(req, res, next) {
   let user=req.session.user
-  let products = [{ name: "Iphone 13", category: "Smart Phone", description: "The biggest Pro camera system upgrade ever. Super Retina XDR display with Pro - Motion for a faster, more responsive feel.", Image: "https://m.media-amazon.com/images/I/315vs3rLEZL.jpg" },
-  { name: "Samsung s22 ultra", category: "Smart Phone", description: "The Galaxy S22 Ultra is slim and bold, with a polished frame that surrounds the extruded shape for elegant symmetry.", Image: "https://m.media-amazon.com/images/I/71PvHfU+pwL._SL1500_.jpg" },
-  { name: "Mi 12 pro", category: "Smart Phone", description: "The smartphone has an AMOLED display,measures 6.73 inches and has a 1440x3200 pixel resolution", Image: "https://specifications-pro.com/wp-content/uploads/2021/10/Xiaomi-Mi-12-Pro-1.jpg" },
-  { name: "Iquoo 8", category: "Smart Phone", description: "Features 6.78″ display, Snapdragon 888+ 5G chipset, 4500 mAh battery, 512 GB storage, 12 GB RAM.", Image: "https://www.gizmochina.com/wp-content/uploads/2021/08/vivo-iqoo-8-01.jpg" }
+  let products = [{ name: "Iphone 14 pro", category: "Smart Phone", description: "The biggest Pro camera system upgrade ever. Super Retina XDR display with Pro - Motion for a faster, more responsive feel.", Image: "images/iphone14.jpg" },
+  { name: "Iphone 13", category: "Smart Phone", description: "IPhone 13 display has rounded corners that follow a beautiful curved design,these corners are within a standard rectangle. ", Image: "images/iphone13.jpg" },
+  { name: "Iphone 12 Mini", category: "Smart Phone", description: "IPhone 12 mini display has rounded corners that follows curved design, and these corners are within a standard rectangle.", Image: "images/iphone12mini.avif" },
+  { name: "Iquoo 8", category: "Smart Phone", description: "Apple iPhone 11 is powered by the Apple A13 Bionic processor. The smartphone comes with a 6.1 inches Liquid Retina IPS LCD", Image: "images/iphone11.webp" }
 
   ]
 
