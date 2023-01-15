@@ -49,5 +49,11 @@ router.post("/edit", (req, res) => {
     res.redirect("/admin");
   });
 });
+router.get("/delete-user", (req, res) => {
+  let userId = req.query.id;
+  user_helper.deleteProduct(userId).then((response) => {
+    res.redirect("/admin");
+  });
+});
 
 module.exports = router;

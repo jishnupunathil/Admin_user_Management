@@ -77,5 +77,13 @@ module.exports={
             })
         })
 
+    },
+    deleteProduct:(userId)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(USER_COLLECTION).remove({_id:objectId(userId)}).then((response)=>{
+                   console.log(response);
+                resolve(response)
+            })
+        })
     }
 }
