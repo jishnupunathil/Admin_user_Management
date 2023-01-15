@@ -1,6 +1,7 @@
 var db = require('../config/connection')
 var bcrypt=require('bcrypt')
 const { USER_COLLECTION } = require('../config/collections')
+var objectId=require('mongodb').ObjectId
 
 module.exports={
     doSignup: (userData) => {
@@ -52,5 +53,29 @@ module.exports={
                 resolve(data)
             })
         })
+    },
+    userDetails: (userId) => {
+
+        return new Promise(async (resolve, reject) => {
+            await db.get().collection(USER_COLLECTION).findOne({ _id: objectId(userId) }).then((user) => {
+                resolve(user)
+            })
+        })
+
+    },
+    updateProducts:(userId,userDetails)=>{
+        console.log(userDetails);
+        return new Promise((resolve,reject)=>{
+            db.get().collection(USER_COLLECTION)
+            .update({_id:objectId(userId)},{
+                $set:{
+                   name:userDetails.name,
+                    email:userDetails.email
+               }
+            }).then((response)=>{
+                resolve()
+            })
+        })
+
     }
 }

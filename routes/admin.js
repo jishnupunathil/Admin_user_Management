@@ -36,5 +36,18 @@ router.post("/add-user", (req, res) => {
     res.redirect("/admin");
   });
 });
+router.get("/edit-user", async (req, res) => {
+  let userId = req.query.id;
+
+  let user = await user_helper.userDetails(userId);
+  res.render("edit_user",{user});
+});
+router.post("/edit", (req, res) => {
+  let userId = req.query.id;
+  console.log(req.body);
+  user_helper.updateProducts(userId, req.body).then(() => {
+    res.redirect("/admin");
+  });
+});
 
 module.exports = router;
