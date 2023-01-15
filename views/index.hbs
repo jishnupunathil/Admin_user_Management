@@ -15,22 +15,22 @@
         <li class="nav-item dropdown" style="list-style: none; ">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="color: black;">
-            {{!-- {{#if user}} --}}
+            {{#if user}}
             Welcome {{user.name}}
-            {{!-- {{else}} --}}
-            {{!-- Account --}}
+            {{else}}
+            Account
 
-            {{!-- {{/if}} --}}
+            {{/if}}
 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {{!-- {{#if user}} --}}
-            {{!-- <a class="dropdown-item" href="/logout">Logout</a> --}}
-            {{!-- {{else}} --}}
+            {{#if user}}
+            <a class="dropdown-item" href="/logout">Logout</a>
+            {{else}}
             <a class="dropdown-item" href="/signup">Sign Up</a>
             <a class="dropdown-item" href="/login">{{Action1}}</a>
 
-            {{!-- {{/if}} --}}
+            {{/if}}
             
           </div>
 
