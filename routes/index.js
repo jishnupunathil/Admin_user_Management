@@ -27,7 +27,11 @@ router.get('/login',(req,res)=>{
 })
 
 router.get('/signup',(req,res)=>{
-  res.render('signup')
+  if (req.session.loggedIn) {
+    res.redirect("/");
+  } else {
+    res.render("signup");
+  }
 })
 
 router.post('/signup',(req,res)=>{
