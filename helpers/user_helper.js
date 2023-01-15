@@ -6,7 +6,7 @@ module.exports={
     doSignup: (userData) => {
         return new Promise(async (resolve, reject) => {
             userData.password = await bcrypt.hash(userData.password, 10)
-            console.log(userData)
+            // console.log(userData)
             db.get().collection(USER_COLLECTION).insertOne(userData).then((data)=>{
                 resolve(data)
             })
@@ -36,6 +36,21 @@ module.exports={
                 console.log("no user found");
                 resolve({ Status: false })
             }
+        })
+    },
+    getUsers: () => {
+        return new Promise(async (resolve, reject) => {
+            let users = await db.get().collection(USER_COLLECTION).find().toArray()
+
+            resolve(users)
+        })
+    },
+    addUser:(userData)=>{
+        return new Promise(async(resolve,reject)=>{
+            userData.password=await bcrypt.hash(userData.password,10)
+            db.get().collection(USER_COLLECTION).insertOne(userData).then((data)=>{
+                resolve(data)
+            })
         })
     }
 }

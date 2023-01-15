@@ -39,6 +39,42 @@
       </div>
     </nav>
   </header>
+  {{#if user.admin}}
+    {{#if col1}}
+      {{else}}
+     <a href="/admin" class="p-3">Go to Admin Panel</a>
+    {{/if}}
+    {{#if flag}}
+    <h1 class="pl-5">{{h1}}</h1>
+    <div class="row">
+    <a href="/admin/add-user"class="btn btn-success mt-1 ml-5 mb-5">Add User</a>
+  </div>
+  <div class="tab pl-3" style="width: 96%;">
+    <table id="userTable" class="table mt-5 pl-3">
+        <thead>
+            <tr>
+                <th scope="col">{{col1}}</th>
+                <th scope="col">{{col2}}</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <th scope="row">{{this.name}}</th>
+                <td>{{this.email}}</td>
+               
+                <td>
+                    <a href="admin/edit-user?id={{this._id}}" class="btn btn-primary">Edit</a>
+                    <a href="admin/delete-user?id={{this._id}}" class="btn btn-danger" onclick="return confirm('Are you  want to remove {{this.name}}')">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+     </div>
+    {{/if}}
+    {{/if}}
 <div class="row p-3">
     {{#each products}}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">
