@@ -3,7 +3,7 @@ var router = express.Router();
 var user_helper=require('../helpers/user_helper')
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
   try {
     let user = req.session.user;
     let flag = true;

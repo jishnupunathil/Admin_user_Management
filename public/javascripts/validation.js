@@ -77,13 +77,13 @@ $(document).ready(function () {
           minlength: 5,
           maxlength: 15,
         },
-        // confirmPassword: {
-        //   equalTo: "#spass",
-        //   minlength5: true,
-        //   required: true,
-        //   minlength: 5,
-        //   maxlength: 15,
-        // },
+        confirmPassword: {
+          required: true,
+          equalTo: "#form3Example4cg",
+          minlength5: true,
+          minlength: 5,
+          maxlength: 15,
+        },
       },
       messages: {
         user: {
@@ -96,10 +96,10 @@ $(document).ready(function () {
           minlength: "Please enter a password more than 5 characters",
           maxlength: "Please enter a password less than 15 characters",
         },
-        // phone: "Enter valid phone number ",
-        // confirmPassword: {
-        //   equalTo:'password does not match'
-        // }
+        phone: "Enter valid phone number ",
+        confirmPassword: {
+          equalTo:'password does not match'
+        }
       },
     });
    
